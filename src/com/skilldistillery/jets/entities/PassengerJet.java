@@ -1,30 +1,23 @@
 package com.skilldistillery.jets.entities;
 
 public class PassengerJet extends Jet implements HighlyRegulated {
-	private int numPassengers;
 
-	public PassengerJet(int numPassengers) {
+	public PassengerJet() {
 		super();
-		this.numPassengers = numPassengers;
 	}
 
-	public int getNumPassengers() {
-		return numPassengers;
+	public PassengerJet(String model, double speed, int range, long price) {
+		super(model, speed, range, price);
 	}
 
-	public void setNumPassengers(int numPassengers) {
-		this.numPassengers = numPassengers;
-	}
-
-	
 	@Override
 	public String toString() {
-		return "PassengerJet [numPassengers=" + numPassengers + ", toString()=" + super.toString() + "]";
+		System.out.println("\tType: Passenger Jet");
+		return super.toString();
 	}
 
 	public void getInspected() {
-		// TODO Auto-generated method stub
-
+		System.out.println("FAA here to inspect passenger jet " + this.model + ".");
 	}
 
 }

@@ -2,12 +2,10 @@ package com.skilldistillery.jets.entities;
 
 public abstract class Jet {
 	
-	private String model;
-	private double speed;
-	private int range;
-	private long price;
-	
-	
+	protected String model;
+	protected double speed;
+	protected int range;
+	protected long price;
 	
 	public Jet() {
 		
@@ -55,23 +53,30 @@ public abstract class Jet {
 
 	@Override
 	public String toString() {
-		return "Jet [model=" + model + ", speed=" + speed + ", range=" + range + ", price=" + price + "]";
-	}
-	
-	public double getSpeedInMach(double speedInMPH) {
-		double speedInMach = speedInMPH / 767;
-		return speedInMach;
+		double mach = this.speed * 0.001303;
+		
+		System.out.println("\tModel: " + this.model);
+		System.out.println("\tSpeed: " + this.speed + " MPH");
+		System.out.printf("\tSpeed in Mach: %.2f%n", mach);
+		System.out.println("\tRange: " + this.range + " miles");
+		System.out.println("\tPrice: $" + this.price + "\n");
+		return "";
 	}
 	
 	public void fly() {
-		int flyingTime = (int) (this.range / this.speed);
-				
+		double flyingTime = (double) (this.range / this.speed);
+		
+		int flyTimeInHours = (int) flyingTime;
+		int flyTimeInMinutes = (int)((flyingTime - flyTimeInHours) * 60);
+		double mach = this.speed * 0.001303;
+		
 		System.out.println("Aircraft Details: ");
 		System.out.println("\tModel: " + this.model);
-		System.out.println("\tSpeed: " + this.speed + "MPH");
-		System.out.println("\tRange: " + this.range + "miles");
+		System.out.println("\tSpeed in MPH: " + this.speed);
+		System.out.printf("\tSpeed in Mach: %.2f%n", mach);
+		System.out.println("\tRange: " + this.range + " miles");
 		System.out.println("\tPrice: $" + this.price);
-		System.out.println("\tFlying Time: " + flyingTime + " hours");
+		System.out.println("\tFlying Time: " + flyTimeInHours + " hours " + flyTimeInMinutes + " minutes.\n");
 	}
 	
 	

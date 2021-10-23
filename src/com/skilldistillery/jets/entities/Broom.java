@@ -1,31 +1,23 @@
 package com.skilldistillery.jets.entities;
 
 public class Broom extends Jet implements ChasesTarget {
-	private String designer;
 
-	
-	
-	public Broom(String designer) {
+	public Broom() {
 		super();
-		this.designer = designer;
 	}
 
-	public String getDesigner() {
-		return designer;
-	}
-
-	public void setDesigner(String designer) {
-		this.designer = designer;
+	public Broom(String model, double speed, int range, long price) {
+		super(model, speed, range, price);
 	}
 
 	@Override
 	public String toString() {
-		return "Broom [designer=" + designer + ", toString()=" + super.toString() + "]";
+		System.out.println("\tType: Broom");
+		return super.toString();
 	}
 
 	public void zoomAtTarget() {
-		System.out.println("Golden snitch spotted, capture mode engaged!");
-
+		System.out.println("Golden snitch spotted, " + this.getModel() + " zoom at target!");
 	}
 
 }
