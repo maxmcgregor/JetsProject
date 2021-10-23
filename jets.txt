@@ -1,0 +1,5 @@
+FighterJet,F-15 Eagle,1875,2992,87700000,missile
+PassengerJet,Airbus A350 XWB,590,9693,355700000,350
+PassengerJet,Ilyushin Il-62,559,6213,50000,186
+Broom,Nimbus 2000,150,24901,1500,Nimbus Racing Broom Company
+Broom,Firebolt,155,24901,2500,Randolph Spudmore
