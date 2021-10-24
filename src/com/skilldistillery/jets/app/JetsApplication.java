@@ -1,9 +1,7 @@
 package com.skilldistillery.jets.app;
 
-
 import java.util.Scanner;
 import com.skilldistillery.jets.entities.AirField;
-
 
 public class JetsApplication {
 
@@ -19,9 +17,9 @@ public class JetsApplication {
 		runApp = true;
 
 		ja.run();
-		
+
 	}
-	
+
 	public void run() {
 		airField.readJetFileThenPopulateAirField("jets.txt");
 		while (runApp) {
@@ -50,34 +48,34 @@ public class JetsApplication {
 		System.out.println("==================================");
 	}
 
-	// switch statement method returns void
-	// public void
 	public void menuChoice(int choice) {
 		switch (choice) {
 		case 1:
-			ja.listFleet();
+			System.out.println("\nThe Big Bad Fleet");
+			System.out.println("=================");
+			airField.listFleet();
 			break;
 		case 2:
 			System.out.println("\nThe fleet has taken flight!\n");
-			ja.flyAllJets();
+			airField.flyAllJets();
 			break;
 		case 3:
-			ja.viewFastestJet();
+			airField.viewFastestJet();
 			break;
 		case 4:
-			ja.viewJetWithLongestRange();
+			airField.viewJetWithLongestRange();
 			break;
 		case 5:
-			ja.inspectRegulatedJets();
+			airField.inspectRegulatedJets();
 			break;
 		case 6:
-			ja.chaseTarget();
+			airField.chaseTarget();
 			break;
 		case 7:
-			ja.addJetToFleet();
+			airField.addJetToFleet();
 			break;
 		case 8:
-			ja.removeJetFromFleet();
+			airField.removeJetFromFleet();
 			break;
 		case 9:
 			ja.quitApp();
@@ -86,40 +84,6 @@ public class JetsApplication {
 		default:
 			System.err.println("Not a valid choice. Choose again. \n");
 		}
-	}
-
-	public void listFleet() {	
-		System.out.println("\nThe Big Bad Fleet");
-		System.out.println("=================");
-		airField.listFleet();		
-	}
-
-	public void flyAllJets() {
-		airField.flyAllJets();
-	}
-	
-	public void viewFastestJet() {
-		airField.viewFastestJet();
-	}
-
-	public void viewJetWithLongestRange() {
-		airField.viewJetWithLongestRange();
-	}
-
-	public void inspectRegulatedJets() {
-		airField.inspectRegulatedJets();
-	}
-
-	public void chaseTarget() {
-		airField.chaseTarget();
-	}
-
-	public void addJetToFleet() {
-		airField.addJetToFleet();
-	}
-
-	public void removeJetFromFleet() {
-		airField.removeJetFromFleet();
 	}
 
 	public void quitApp() {

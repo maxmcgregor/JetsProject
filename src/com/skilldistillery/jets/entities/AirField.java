@@ -33,7 +33,6 @@ public class AirField {
 	}
 
 	public List<Jet> readJetFileThenPopulateAirField(String fileName) {
-		// AirField af = new AirField();
 
 		try (BufferedReader bufIn = new BufferedReader(new FileReader(fileName))) {
 			String line;
